@@ -1,0 +1,23 @@
+
+#----------------------------------------------------------------------
+#           SETTINGS FOR YOUR PACKAGE
+#----------------------------------------------------------------------
+
+# Package name,version and description
+PKG_NAME := ocaml-facebook-login
+PKG_VERS := 0.1
+PKG_DESC := OCaml binding for Facebook Login for Web
+REQUIRES := js_of_ocaml js_of_ocaml.syntax
+ACHIVES_BYTE := src
+
+# Source files for the package
+FILES := $(wildcard src/*.ml* src/misc/*.ml* src/button/*.ml* src/log/*.ml* src/jcrop/*.ml*)
+
+# OCamlfind packages for the package
+PACKAGES := js_of_ocaml js_of_ocaml.syntax lwt lwt.syntax react
+
+# Debug package (yes/no): Debugging info in compilation
+DEBUG := yes
+
+# Package's library $(PKG_NAME).{client,server}.cma (a,cmxa,cmxs only server side)
+LIBDIR := lib/
