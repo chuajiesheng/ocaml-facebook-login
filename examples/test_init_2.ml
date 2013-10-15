@@ -14,18 +14,16 @@ let test_api_call () =
 let start_2 =
   let callback resp =
     let _ = Firebug.console##log(resp) in
-    let scope = Js.Unsafe.obj [||] in
-    let _ = scope##scope <- Js.string "email" in
     if (resp##status == Js.string "connected") then
       test_api_call ()
     else if (resp##status == Js.string "not_authorized") then
       Js.Unsafe.fun_call
         (Js.Unsafe.variable "FB.login")
-        [|Js.Unsafe.inject callback; Js.Unsafe.inject scope|]
+        [|Js.Unsafe.inject callback|]
     else
       Js.Unsafe.fun_call
         (Js.Unsafe.variable "FB.login")
-        [|Js.Unsafe.inject callback; Js.Unsafe.inject scope|]
+        [|Js.Unsafe.inject callback|]
   in
   Js.Unsafe.fun_call (Js.Unsafe.variable "FB.Event.subscribe")
                      [|Js.Unsafe.inject (Js.string "auth.authResponseChange");
