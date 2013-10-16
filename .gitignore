@@ -32,6 +32,9 @@ Session.vim
 *.cmxs
 *.cmxa
 
+### Js_of_ocaml
+*.js
+
 ### others
 _build
 _deps
