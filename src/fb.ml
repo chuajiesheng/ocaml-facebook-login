@@ -15,3 +15,16 @@ let init (p : params Js.t) =
 let async f =
   let wrapped = fun () -> f in
   (Js.Unsafe.coerce (Js.string "window"))##fbAsyncInit <- wrapped
+
+let subscribe callback =
+  Js.Unsafe.fun_call (Js.Unsafe.variable "FB.Event.subscribe")
+                     [|Js.Unsafe.inject (Js.string "auth.authResponseChange");
+                       Js.Unsafe.inject callback|]
+
+let login callback =
+  Js.Unsafe.fun_call (Js.Unsafe.variable "FB.login")
+                     [|Js.Unsafe.inject callback|]
+
+let api obj callback =
+  Js.Unsafe.fun_call (Js.Unsafe.variable "FB.api")
+                     [|Js.Unsafe.inject obj; Js.Unsafe.inject callback|]

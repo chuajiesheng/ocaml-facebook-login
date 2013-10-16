@@ -11,3 +11,9 @@ val empty_params : unit -> params Js.t
 val init : params Js.t -> 'a
 
 val async : 'a -> unit
+
+val subscribe : 'a -> 'b
+
+val login : 'a -> 'b
+
+val api : 'a -> 'b -> 'c
