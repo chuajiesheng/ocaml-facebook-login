@@ -11,3 +11,7 @@ let empty_params () = Js.Unsafe.obj [||]
 let init (p : params Js.t) =
   Js.Unsafe.fun_call
     (Js.Unsafe.variable "FB.init") [|Js.Unsafe.inject p|]
+
+let async f =
+  let wrapped = fun () -> f in
+  (Js.Unsafe.coerce (Js.string "window"))##fbAsyncInit <- wrapped
