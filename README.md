@@ -33,3 +33,14 @@ See example folder
 
 ##Notes
 1. If you encounter any issue during the build process, try "make distclean" to update the .depend files.
+2. Currently, I am unable to convert this set of codes. Any help is welcome! As follows:
+
+
+    // Load the SDK asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      ref.parentNode.insertBefore(js, ref);
+    }(document));
