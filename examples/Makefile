@@ -1,7 +1,7 @@
 SRC=$(wildcard *.ml)
 TARGETS=$(SRC:.ml=.js)
 REQS=$(SRC:.ml=.js)
-LIB=-package js_of_ocaml -package js_of_ocaml.syntax -package lwt
+LIB=-package js_of_ocaml -package js_of_ocaml.syntax -package lwt -package ocaml-facebook-login
 SYNTAX=-syntax camlp4o
 OCAMLLFLAGS=
 
