@@ -12,8 +12,7 @@ let start _ =
                                  p) in
 
   let init = Fb.init(p) in
-  let wrapped_init = fun () -> init in
-  let async_init = (Js.Unsafe.coerce (Js.string "window"))##fbAsyncInit <- wrapped_init in
+  let async = Fb.async init in
   let _ = Firebug.console##log_2
                          ("setting window variable",
                           (Js.Unsafe.coerce (Js.string "window"))##fbAsyncInit) in
