@@ -3,7 +3,10 @@
 A OCaml binding for [facebook-login](https://developers.facebook.com/docs/facebook-login/getting-started-web/)
 done via [Js_of_OCaml](http://ocsigen.org/js_of_ocaml) library. The src folder contains the binding library
 for the JavaScript SDK. The examples in the examples folder is designed to run in
-[loris-88](https://loris-88.ddns.comp.nus.edu.sg) currently.
+[loris-88](https://loris-88.comp.nus.edu.sg/ocaml-facebook-login) currently.
+
+Currently, there is two location which the example is deployed [loris-88](http://loris-88.comp.nus.edu.sg/ocaml-facebook-login/)
+and [loris-82](https://loris-82.ddns.comp.nus.edu.sg/ocaml-facebook-login/)
 
 ##Installation
     make; make install
